@@ -27,12 +27,12 @@ class TestCountry:
     @pytest.mark.skip
     def test_str_works(self):
         a = core.Country('a', 4, 21)
-        assert a.__str__() == 'a has a population of 4 and is 21 square km.'
+        assert str(a) == 'a has a population of 4 and is 21 square km.'
 
     @pytest.mark.skip
     def test_repr_works(self):
         a = core.Country('a', 45, 20)
-        assert [a].__repr__() == "[Country('a', 45, 20)]"
+        assert repr([a]) == "[Country('a', 45, 20)]"
 
 
 class TestContinent:
