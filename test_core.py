@@ -2,33 +2,37 @@ import core
 import pytest
 
 
-@pytest.mark.skip
 class TestCountry:
     def test_Country_should_exist(self):
         assert isinstance(core.Country, type)
 
+    @pytest.mark.skip
     def test_Country_init_works(self):
         c = core.Country('a', 1, 2)
         assert c.name == 'a'
         assert c.population == 1
         assert c.area == 2
 
+    @pytest.mark.skip
     def test_is_larger_works(self):
         a = core.Country('a', 3, 2)
         b = core.Country('b', 1, 3)
         assert a.is_larger(b) == True
 
+    @pytest.mark.skip
     def test_population_density_works(self):
         a = core.Country('wow', 100, 200)
         assert a.population_density() == 0.5
 
+    @pytest.mark.skip
     def test_str_works(self):
         a = core.Country('a', 4, 21)
-        assert a.__str__() == 'a has a population of 4 and is 21 square km.'
+        assert str(a) == 'a has a population of 4 and is 21 square km.'
 
+    @pytest.mark.skip
     def test_repr_works(self):
         a = core.Country('a', 45, 20)
-        assert [a].__repr__() == "[Country('a', 45, 20)]"
+        assert repr([a]) == "[Country('a', 45, 20)]"
 
 
 class TestContinent:
